@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mets Word Guess Game</title>
+    <script>
+        const words = ["mets", "baseball", "champions", "stadium"];
+        let word = words[Math.floor(Math.random() * words.length)];
+        let guess = "";
+
+        function checkGuess() {
+            guess = document.getElementById("input").value.toLowerCase();
+            const result = guess === word ? "Correct!" : "Try Again!";
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Guess the Word!</h1>
+    <input type="text" id="input" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Submit</button>
+    <p id="result"></p>
+</body>
+</html>
